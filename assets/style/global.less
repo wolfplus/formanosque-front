@@ -688,12 +688,6 @@ section {
                         }
                     }
                 }
-                span.presence {
-                    background: #ce4f35;
-                    padding: 4px;
-                    color: #fff;
-                    font-size: 12px;
-                }
             }
         }
         @media screen and (max-width: 850px) {
@@ -774,11 +768,6 @@ section {
                     margin-bottom: 5px;
                 }
                 div.info {
-                    span {
-                        background: #ce4f35;
-                        padding: 4px;
-                        color: #fff;
-                    }
                     ul {
                         li {
                             margin-top: 10px;
@@ -788,18 +777,6 @@ section {
                                 color: #a8bbd6;
                             }
                         }
-                    }
-                }
-                span.cpf {
-                    position: absolute;
-                    margin-top: 5px;
-                    margin-left: 5px;
-                    font-size: 13px;
-                    background: rgba(213, 222, 235, 0.5);
-                    padding: 5px;
-                    .backblur(4px);
-                    i {
-                        color: #ffef42;
                     }
                 }
                 footer {
@@ -1117,9 +1094,6 @@ section {
                                         margin-top: 25px;
                                     }
                                 }
-                                &:last-child {
-    
-                                }
                             }
                         }
                     }
@@ -1152,86 +1126,131 @@ section {
                 }
             }
         }
-        .container ul {
-            list-style: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 1px 100px;
+        &.planning {
+            display: block;
+            .gradientLinear(#d5deeb, 142deg, #d5deeb, darken(#d5deeb, 10));
+            .timeline {
+                ul {
+                    li {
+                        width: 100%;
+                        .time_contain {
+                            position: relative;
+                            width: 500px;
+                            padding-right: 15%;
+                            margin-bottom: 30px;
+                            .time_info {
+                                img {
+                                    width: 100%;
+                                    .borderradius(5px);
+                                    .shadow-gloss();
+                                }
+                                h2 {
+                                    margin: 10px 0 10px 0;
+                                    padding: 5px;
+                                    background: #fff;
+                                    font-family: Montserrat,sans-serif;
+                                }
+                                span {
+                                    font-size: 11px;
+                                    color: #fff;
+                                }
+                            }
+                            span:not(.time_info span) {
+                                position: absolute;
+                                right: -100px;
+                                width: 200px;
+                                color: #fff;
+                                &.start {
+                                    display: block;
+                                    top: 0px;
+                                    border-top: 3px dotted #50c97e;
+                                }
+                                &.end {
+                                    bottom: 0px;
+                                    border-bottom: 3px dotted #50c97e;
+                                }
+                                &.date {
+                                    top: 45%;
+                                    right: -300px;
+                                    font-size: 19px;
+                                    font-family: Montserrat,sans-serif;
+                                    i {
+                                        position: absolute;
+                                        top: -20px;
+                                        right: -50px;
+                                        font-size: 70px;
+                                        color: #50c97e;
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(even) {
+                            .time_contain {
+                                padding-right: 0;
+                                padding-left: 96px;
+                                float: right;
+                                span {
+                                    right: auto;
+                                    left: -150px;
+                                    &.date {
+                                        right: auto;
+                                        left: -300px;
+                                        i {
+                                            right: auto;
+                                            left: -90px;
+                                        }
+                                    }
+                                }
+                            }   
+                        }
+                    }
+                }
+            }
+            @media screen and (max-width: 850px) {
+                .time_contain {
+                    span:not(.time_info span) {
+                        display: block;
+                        position: relative !important;
+                        right: 0px !important;
+                        i {
+                            display: none;
+                        }
+                        &.date {
+                            margin: 10px 0 10px 0;
+                        }
+                    }
+                }
+                &:nth-child(even) {
+                    .time_contain {
+                        span {
+                            left: 0px !important;
+                            
+                        }
+                    }
+                }
+            }
+        }
+        span.presence {
+            background: #ce4f35;
+            padding: 4px;
             color: #fff;
-            font-size: 13px;
-          }
-          .container ul:before {
-            content: '';
-            width: 1px;
-            height: 100%;
-            position: absolute;
-            border-left: 2px dashed #fff;
-            
-          }
-          .container ul li {
-            position: relative;
-            margin-left: 30px ;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 14px;
-            border-radius: 6px;
-            width: 250px;
-            box-shadow: 0 0 4px rgba(0, 0, 0, .12), 0 2px 2px rgba(0, 0, 0, .08)
-          }
-          .container ul li:not(:first-child) {
-            margin-top: 60px;
-          }
-          .container ul li > span {
-            width: 2px;
-            height: 100%;
-            background: #fff;
-            left: -30px;
-            top: 0;
-            position: absolute;
-          }
-          .container ul li > span:before, .container ul li > span:after {
-            content: '';
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            position: absolute;
-            background: #86b7e7;
-            left: -5px;
-            top: 0;
-          }
-          .container ul li span:after {
-            top: 100%;
-          }
-          .container ul li > div {
-            margin-left: 10px;  
-          }
-          .container div .title, .container div .type {
-            font-weight: 600;
             font-size: 12px;
-          }
-          .container div .info {
-            font-weight: 300;
-          }
-          .container div > div {
-            margin-top: 5px;
-          }
-          .container span.number {
-            height: 100%;
-          }
-          .container span.number span {
+            &.present {
+                background: #9c2ce8;
+            }
+        }
+        span.cpf {
             position: absolute;
-            font-size: 10px;
-            left: -35px;
-            font-weight: bold;
-          }
-          .container span.number span:first-child {
-            top: 0;
-          }
-          .container span.number span:last-child {
-            top: 100%;
-          }
+            margin-top: 5px;
+            margin-left: 5px;
+            font-size: 13px;
+            background: rgba(213, 222, 235, 0.5);
+            padding: 5px;
+            .backblur(4px);
+            i {
+                color: #ffef42;
+            }
+        }
         h1.title {
             display: inline-block;
             background: #fff;
